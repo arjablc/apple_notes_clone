@@ -1,3 +1,4 @@
+import 'package:apple_notes_clone/pages/notes_page.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -24,7 +25,7 @@ class MyApp extends StatelessWidget {
       ],
       child: MaterialApp(
         routes: {
-          "/": (context) => FoldersPage(),
+          "/": (context) => const FoldersPage(),
         },
         theme: customTheme.customTheme,
         debugShowCheckedModeBanner: false,

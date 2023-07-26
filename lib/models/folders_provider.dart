@@ -12,13 +12,16 @@ class Folder {
 
 class FolderDataProvider with ChangeNotifier {
   final List<Folder> _list = [
-    Folder(folderName: "Folder1", id: UniqueKey().toString()),
-    Folder(folderName: "folder2", id: "folder2")
+    Folder(folderName: "Notes", id: UniqueKey().toString()),
+    Folder(folderName: "Notes", id: UniqueKey().toString()),
+    Folder(folderName: "Notes", id: UniqueKey().toString()),
+    Folder(folderName: "Notes", id: UniqueKey().toString()),
+    Folder(folderName: "Notes", id: UniqueKey().toString())
   ];
 
   //for quick notes
   //instantiaitng a Folder object to store only quick Note
-  Folder quickNote = Folder(folderName: "Quick Note", id: "quicknote");
+  Folder quickNote = Folder(folderName: "Quick Notes", id: "quicknotes");
 
   //returning the list of folder
   List<Folder> get folderList => [..._list];
@@ -52,7 +55,7 @@ class FolderDataProvider with ChangeNotifier {
   //update folder note count
   int updateFolderNotecount(List<Notes> noteList, String folderId) {
     int i = 0, j = 0;
-    if (folderId == "quicknote") {
+    if (folderId == "quicknotes") {
       for (i; i < noteList.length; i++) {
         if (noteList[i].folderId == folderId) {
           j++;
