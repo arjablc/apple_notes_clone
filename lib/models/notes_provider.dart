@@ -1,16 +1,22 @@
-import 'package:apple_notes_clone/models/folders_provider.dart';
 import 'package:flutter/cupertino.dart';
 
-class Notes with ChangeNotifier {
+class Notes {
   final String title;
   final String id = UniqueKey().toString();
   final String content;
-  final String folderId = 'quick_note';
+  final String folderId;
 
-  Notes({required this.title, required this.content});
+  Notes({
+    required this.title,
+    required this.content,
+    required this.folderId,
+  });
 }
 
-class NotesListProvider with ChangeNotifier {
-  final List<Notes> _list = [];
+class NotesDataProvider with ChangeNotifier {
+  final List<Notes> _list = [
+    Notes(title: "some title", content: "some content", folderId: "quicknote"),
+    Notes(title: "adfadsf", content: "adsfa", folderId: "folder2")
+  ];
   List<Notes> get notesList => [..._list];
 }

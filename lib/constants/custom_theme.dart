@@ -11,8 +11,9 @@ class CustomTheme {
     scaffoldBackgroundColor: CustomColors.whiteBakcground,
     textButtonTheme: TextButtonThemeData(
       style: TextButton.styleFrom(
+        textStyle: const TextStyle(fontSize: 15),
         foregroundColor: CustomColors.textButtonColor,
-        padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
+        padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
       ),
     ),
     iconTheme: const IconThemeData(color: CustomColors.textButtonColor),
