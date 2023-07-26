@@ -19,13 +19,15 @@ class MyApp extends StatelessWidget {
     final customTheme = CustomTheme();
     return MultiProvider(
       providers: [
-        ChangeNotifierProvider(create: (_) => FoldersListProvider()),
-        ChangeNotifierProvider(create: (_) => NotesListProvider())
+        ChangeNotifierProvider(create: (_) => FolderDataProvider()),
+        ChangeNotifierProvider(create: (_) => NotesDataProvider())
       ],
       child: MaterialApp(
+        routes: {
+          "/": (context) => FoldersPage(),
+        },
         theme: customTheme.customTheme,
         debugShowCheckedModeBanner: false,
-        home: const FoldersPage(),
       ),
     );
   }
