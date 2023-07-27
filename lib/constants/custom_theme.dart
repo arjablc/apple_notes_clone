@@ -4,7 +4,10 @@ import 'package:flutter/services.dart';
 
 class CustomTheme {
   final ThemeData customLightTheme = ThemeData(
-    colorScheme: const ColorScheme.light(primaryContainer: Colors.white),
+    colorScheme: const ColorScheme.light(
+      primaryContainer: CupertinoColors.systemGroupedBackground,
+      onSecondaryContainer: CupertinoColors.white,
+    ),
     appBarTheme: AppBarTheme(
       systemOverlayStyle:
           const SystemUiOverlayStyle(statusBarColor: Colors.black),
@@ -39,8 +42,9 @@ class CustomTheme {
     ),
   );
   final ThemeData darkThemeData = ThemeData(
-    colorScheme:
-        const ColorScheme.dark(primaryContainer: CupertinoColors.black),
+    colorScheme: const ColorScheme.dark(
+        primaryContainer: CupertinoColors.black,
+        onSecondaryContainer: CupertinoColors.darkBackgroundGray),
     appBarTheme: AppBarTheme(
       systemOverlayStyle:
           const SystemUiOverlayStyle(statusBarColor: Colors.black),
