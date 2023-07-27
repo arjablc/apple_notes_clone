@@ -18,10 +18,10 @@ class FoldersPageBottomBar extends StatelessWidget {
             Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
           PopupMenuButton(
             tooltip: null,
-            color: CupertinoColors.lightBackgroundGray.withOpacity(0.7),
+            color: CupertinoColors.lightBackgroundGray,
             elevation: 10,
             shadowColor: Colors.grey,
-            position: PopupMenuPosition.over,
+            position: PopupMenuPosition.under,
             offset: const Offset(0, -120),
             shape:
                 RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),

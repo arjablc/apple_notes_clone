@@ -9,7 +9,7 @@ import '../widgets/folder_page_bottom_bar.dart';
 
 class FoldersPage extends StatefulWidget {
   const FoldersPage({super.key});
-  static const String routeName = '/';
+  static const String routeName = '/folder-page';
 
   @override
   State<FoldersPage> createState() => _FoldersPageState();
@@ -51,6 +51,7 @@ class _FoldersPageState extends State<FoldersPage> {
                   return CupertinoListSection.insetGrouped(
                     children: [
                       FoldersListTile(
+                        folderId: quickNote.id,
                         isEditMode: false,
                         folderName: quickNote.folderName,
                         notesNumber:
@@ -87,6 +88,7 @@ class _FoldersPageState extends State<FoldersPage> {
                         foldersList.length,
                         (index) => FoldersListTile(
                             isEditMode: isEditMode,
+                            folderId: foldersList[index].id,
                             folderName: foldersList[index].folderName,
                             notesNumber: value.updateFolderNotecount(
                                 noteList, foldersList[index].id))),

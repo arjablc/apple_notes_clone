@@ -12,11 +12,15 @@ class Folder {
 
 class FolderDataProvider with ChangeNotifier {
   final List<Folder> _list = [
-    Folder(folderName: "Notes", id: UniqueKey().toString()),
-    Folder(folderName: "Notes", id: UniqueKey().toString()),
-    Folder(folderName: "Notes", id: UniqueKey().toString()),
-    Folder(folderName: "Notes", id: UniqueKey().toString()),
-    Folder(folderName: "Notes", id: UniqueKey().toString())
+    //Some of the notes here are provided
+    //hardcoded folderId for demonstration
+    //purposes
+    //However, the Notes folder will always be there
+    // !Hence in Production these values except the Notes folder
+    // !must be removed
+    Folder(folderName: "Notes", id: "notes"),
+    Folder(folderName: "Family", id: "family"),
+    Folder(folderName: "Home", id: "home")
   ];
 
   //for quick notes
