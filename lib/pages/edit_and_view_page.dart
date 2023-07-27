@@ -108,7 +108,8 @@ class _EditViewPageState extends State<EditViewPage> {
                       width: 35)),
               const Icon(CupertinoIcons.camera),
               const Icon(CupertinoIcons.pencil_outline),
-              const Icon(Ionicons.create_outline)
+              const EditButton(
+                  initiateQuickNote: true, callingFolderId: "quicknotes")
             ],
           )
               //! The buttons provided by flutter_quill
