@@ -78,7 +78,10 @@ class _EditViewPageState extends State<EditViewPage> {
         actions: [
           IconButton(
               onPressed: () {},
-              icon: const Icon(CupertinoIcons.ellipsis_vertical_circle))
+              icon: const Icon(
+                CupertinoIcons.ellipsis_vertical_circle,
+                color: CupertinoColors.systemYellow,
+              ))
         ],
       ),
       body: Column(
