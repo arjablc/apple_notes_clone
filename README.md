@@ -15,3 +15,11 @@ I am unsure about what I should include in the requirements file. On research, I
 <summary>Dark Mode</summary>
 <img src="./samples/dark/folders_dark_popup.png", height="400">
 </details>
+
+## Tasks
+- [X] Copy the UI one to one
+- [X] add functionalities to the buttons(to the best of my abilities)
+- [X] State Management: folders
+- [ ] Rich Text Editor and controllers
+- [ ] State Management: Notes Content
+- [ ] Animations(attention to details)
