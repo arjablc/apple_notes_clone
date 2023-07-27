@@ -34,9 +34,12 @@ class _FoldersPageState extends State<FoldersPage> {
                   }),
               child: Text(isEditMode ? "Done" : "Edit"))
         ],
-        title: Text(
-          "Folders",
-          style: Theme.of(context).textTheme.displaySmall,
+        title: Padding(
+          padding: const EdgeInsets.all(10.0),
+          child: Text(
+            "Folders",
+            style: Theme.of(context).textTheme.displaySmall,
+          ),
         ),
       ),
       body: Stack(
@@ -44,6 +47,8 @@ class _FoldersPageState extends State<FoldersPage> {
           SizedBox(
             height: MediaQuery.of(context).size.height * 0.85,
             child: ListView(
+              primary: false,
+              physics: const BouncingScrollPhysics(),
               children: [
                 //* Quick Notes section
                 Consumer<FolderDataProvider>(builder: (context, value, child) {
@@ -65,9 +70,12 @@ class _FoldersPageState extends State<FoldersPage> {
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      Text(
-                        "iCloud",
-                        style: Theme.of(context).textTheme.titleLarge,
+                      Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 20.0),
+                        child: Text(
+                          "iCloud",
+                          style: Theme.of(context).textTheme.titleLarge,
+                        ),
                       ),
                       //* dropdown toggler
                       TextButton(

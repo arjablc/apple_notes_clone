@@ -10,8 +10,8 @@ class FoldersPageBottomBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 75,
-      color: CupertinoColors.systemGroupedBackground,
+      height: 60,
+      color: Theme.of(context).colorScheme.primaryContainer,
       child: Padding(
         padding: const EdgeInsets.only(left: 15.0),
         child:

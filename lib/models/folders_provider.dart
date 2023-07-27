@@ -1,4 +1,5 @@
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/rendering.dart';
 
 import 'notes_provider.dart';
 
@@ -15,12 +16,13 @@ class FolderDataProvider with ChangeNotifier {
     //Some of the notes here are provided
     //hardcoded folderId for demonstration
     //purposes
-    //However, the Notes folder will always be there
-    // !Hence in Production these values except the Notes folder
-    // !must be removed
+    //However, the Notes folder and the all icloud will always be there
+    // ! Hence, in Production these values except the Notes folder
+    // ! must be removed
+    Folder(folderName: "All iCloud", id: "all-icloud"),
     Folder(folderName: "Notes", id: "notes"),
     Folder(folderName: "Family", id: "family"),
-    Folder(folderName: "Home", id: "home")
+    Folder(folderName: "Home", id: "home"),
   ];
 
   //for quick notes
@@ -58,22 +60,38 @@ class FolderDataProvider with ChangeNotifier {
 
   //update folder note count
   int updateFolderNotecount(List<Notes> noteList, String folderId) {
-    int i = 0, j = 0;
-    if (folderId == "quicknotes") {
-      for (i; i < noteList.length; i++) {
-        if (noteList[i].folderId == folderId) {
-          j++;
+    switch (folderId) {
+      case ("quicknotes"):
+        {
+          int i = 0, j = 0;
+          for (i; i < noteList.length; i++) {
+            if (noteList[i].folderId == folderId) {
+              j++;
+            }
+          }
+          return j;
         }
-      }
-      return j;
+      case ("all-icloud"):
+        {
+          return noteList.length;
+        }
+
+      default:
+        {
+          int i = 0;
+          int j = 0;
+          for (i; i < noteList.length; i++) {
+            if (noteList[i].folderId == folderId) {
+              j++;
+            }
+          }
+          return j;
+        }
     }
-    i = 0;
-    j = 0;
-    for (i; i < noteList.length; i++) {
-      if (noteList[i].folderId == folderId) {
-        j++;
-      }
-    }
-    return j;
+  }
+
+  //getting the folder by id
+  Folder getFolderById(String folderId) {
+    return _list.firstWhere((element) => element.id == folderId);
   }
 }

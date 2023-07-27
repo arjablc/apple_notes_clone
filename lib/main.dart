@@ -30,7 +30,9 @@ class MyApp extends StatelessWidget {
               ),
           "/folder-page": (context) => const FoldersPage()
         },
-        theme: customTheme.customTheme,
+        theme: customTheme.customLightTheme,
+        darkTheme: customTheme.darkThemeData,
+        themeMode: ThemeMode.system,
         debugShowCheckedModeBanner: false,
       ),
     );
