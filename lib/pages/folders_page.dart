@@ -1,11 +1,14 @@
+import 'package:apple_notes_clone/widgets/edit_button.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:ionicons/ionicons.dart';
 import 'package:provider/provider.dart';
 
 import '../models/notes_provider.dart';
 import '../models/folders_provider.dart';
 import '../widgets/folder_list_tile.dart';
-import '../widgets/folder_page_bottom_bar.dart';
+import '../widgets/bottom_bar.dart';
+import '../widgets/ios_style_popup_menu.dart';
 
 class FoldersPage extends StatefulWidget {
   const FoldersPage({super.key});
@@ -108,7 +111,15 @@ class _FoldersPageState extends State<FoldersPage> {
           const Column(
             mainAxisAlignment: MainAxisAlignment.end,
             children: [
-              FoldersPageBottomBar(),
+              BottomBar(
+                child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      IosStylePopupMenu(),
+                      //TODO implement tap
+                      EditButton()
+                    ]),
+              ),
             ],
           ),
         ],
