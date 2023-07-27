@@ -13,5 +13,5 @@ I am unsure about what I should include in the requirements file. On research, I
 </details>
 <details>
 <summary>Dark Mode</summary>
-
+<img src="./samples/dark/folders_dark_popup.png", height="200">
 </details>
