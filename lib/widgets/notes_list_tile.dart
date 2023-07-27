@@ -28,6 +28,7 @@ class NotesListTiles extends StatelessWidget {
     return CupertinoListTile(
       onTap: () => Navigator.of(context).push(CupertinoPageRoute(
           builder: (context) => EditViewPage(
+                isQuickNote: (folderId == 'quicknote') ? true : false,
                 isNewNote: false,
                 folderId: folderId,
                 noteId: noteId,

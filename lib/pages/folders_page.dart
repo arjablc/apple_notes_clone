@@ -115,8 +115,10 @@ class _FoldersPageState extends State<FoldersPage> {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       IosStylePopupMenu(),
-                      //TODO implement tap
-                      EditButton()
+                      EditButton(
+                        initiateQuickNote: true,
+                        callingFolderId: 'quicknotes',
+                      )
                     ]),
               ),
             ],

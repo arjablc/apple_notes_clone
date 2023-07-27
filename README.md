@@ -21,7 +21,8 @@ I am unsure about what I should include in the requirements file. On research, I
 ## Tasks
 - [X] Copy the UI one to one
 - [X] add functionalities to the buttons(to the best of my abilities)
-- [X] State Management: folders
-- [ ] Rich Text Editor and controllers
-- [ ] State Management: Notes Content
+- [ ] Add, remove and rename folders
+- [X] Rich Text Editor and controllers
+- [ ] Make the edit page buttons work
+- [ ] Add, remove notes 
 - [ ] Animations(attention to details)

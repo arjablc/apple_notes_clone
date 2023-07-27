@@ -24,7 +24,7 @@ class CustomTheme {
         padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
       ),
     ),
-    iconTheme: const IconThemeData(color: CupertinoColors.systemYellow),
+    iconTheme: const IconThemeData(color: Color(0xFFFFCC00)),
     textTheme: const TextTheme(
       titleSmall: TextStyle(color: CupertinoColors.inactiveGray, fontSize: 18),
       titleMedium: TextStyle(

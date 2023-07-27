@@ -86,13 +86,18 @@ class NotesPage extends StatelessWidget {
                 })
               ],
             ),
-            const Column(
+            Column(
               mainAxisAlignment: MainAxisAlignment.end,
               children: [
                 BottomBar(
                     child: Row(
                   mainAxisAlignment: MainAxisAlignment.end,
-                  children: [EditButton()],
+                  children: [
+                    EditButton(
+                      initiateQuickNote: false,
+                      callingFolderId: folderId,
+                    )
+                  ],
                 ))
               ],
             )

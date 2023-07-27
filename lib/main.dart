@@ -25,9 +25,7 @@ class MyApp extends StatelessWidget {
       ],
       child: MaterialApp(
         routes: {
-          "/": (context) => const NotesPage(
-                folderId: "notes",
-              ),
+          "/": (context) => const FoldersPage(),
           "/folder-page": (context) => const FoldersPage()
         },
         theme: customTheme.customLightTheme,

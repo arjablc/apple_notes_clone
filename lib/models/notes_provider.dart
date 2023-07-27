@@ -4,7 +4,7 @@ import 'package:intl/intl.dart';
 
 class Notes {
   final String id = UniqueKey().toString();
-  final String content;
+  String content;
   final String folderId;
   final DateTime _dateTime = DateTime.now();
 
@@ -60,5 +60,21 @@ class NotesDataProvider with ChangeNotifier {
           (element) => element.folderId == folderId,
         )
         .toList();
+  }
+
+  //add new note
+  void addNewNote(Notes newNote) {
+    _list.add(newNote);
+  }
+
+  //update existing Note
+  void updateExistingNote(String content, Notes oldNote) {
+    int oldNoteIndex = _list.indexOf(oldNote);
+    _list[oldNoteIndex].content = content;
+  }
+
+  //Note by id
+  Notes getNoteById(String id) {
+    return _list.firstWhere((element) => element.id == id);
   }
 }
