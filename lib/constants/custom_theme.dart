@@ -1,8 +1,16 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 class CustomTheme {
   final ThemeData customTheme = ThemeData(
+    appBarTheme: AppBarTheme(
+      systemOverlayStyle:
+          const SystemUiOverlayStyle(statusBarColor: Colors.black),
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
+      backgroundColor: Colors.transparent,
+      elevation: 0,
+    ),
     primarySwatch: Colors.yellow,
     scaffoldBackgroundColor: CupertinoColors.systemGroupedBackground,
     textButtonTheme: TextButtonThemeData(

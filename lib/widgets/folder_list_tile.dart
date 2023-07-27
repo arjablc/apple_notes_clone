@@ -8,9 +8,11 @@ class FoldersListTile extends StatelessWidget {
     Key? key,
     required this.folderName,
     required this.notesNumber,
+    required this.isEditMode,
   }) : super(key: key);
   final String folderName;
   final int notesNumber;
+  final bool isEditMode;
 
   @override
   Widget build(BuildContext context) {
@@ -23,16 +25,33 @@ class FoldersListTile extends StatelessWidget {
           style: Theme.of(context).textTheme.titleMedium,
         ),
         trailing: Row(
-          children: [
-            Text(
-              notesNumber.toString(),
-              style: Theme.of(context).textTheme.titleSmall,
-            ),
-            const Icon(
-              CupertinoIcons.right_chevron,
-              color: CupertinoColors.inactiveGray,
-            )
-          ],
+          children: isEditMode
+              ? [
+                  IconButton(
+                      onPressed: () {},
+                      icon: const Icon(
+                        CupertinoIcons.ellipsis_circle,
+                        size: 20,
+                      )),
+                  GestureDetector(
+                    //TODO Implement the dragging behavior
+                    onVerticalDragUpdate: ((details) => null),
+                    child: const Icon(
+                      CupertinoIcons.line_horizontal_3,
+                      color: CupertinoColors.lightBackgroundGray,
+                    ),
+                  )
+                ]
+              : [
+                  Text(
+                    notesNumber.toString(),
+                    style: Theme.of(context).textTheme.titleSmall,
+                  ),
+                  const Icon(
+                    CupertinoIcons.right_chevron,
+                    color: CupertinoColors.inactiveGray,
+                  )
+                ],
         ));
   }
 }

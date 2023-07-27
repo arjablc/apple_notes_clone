@@ -12,7 +12,7 @@ class NotesPage extends StatelessWidget {
           Container(
             decoration:
                 BoxDecoration(color: CupertinoColors.lightBackgroundGray),
-            child: CupertinoTextField(),
+            child: CupertinoSearchTextField(),
           )
         ],
       ),
