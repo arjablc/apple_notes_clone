@@ -7,6 +7,7 @@ A Clone of the Notes app in the IOS ecosystem, built with flutter.
 <Details>
 <Summary>For the folks at DurBean</summary>
 [requirements.txt](requirements.txt)
+  
 I am unsure about what I should include in the requirements file. On research, I found it to be explicit for python projects. However, I have included the packages from pub.dev and the sdk that is used in this project.
 </Details>
 
