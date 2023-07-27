@@ -1,20 +1,31 @@
-import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
+
+import 'package:apple_notes_clone/pages/edit_and_view_page.dart';
 
 class NotesListTiles extends StatelessWidget {
   const NotesListTiles({
     Key? key,
     required this.title,
     required this.subtitle,
+    required this.noteId,
+    required this.folderId,
   }) : super(key: key);
 
   final String title;
   final String subtitle;
+  final String noteId;
+  final String folderId;
 
   @override
   Widget build(BuildContext context) {
     return CupertinoListTile(
-      padding: const EdgeInsets.symmetric(vertical: 5, horizontal: 10),
+      onTap: () => Navigator.of(context).push(CupertinoPageRoute(
+          builder: (context) => EditViewPage(
+                isNewNote: false,
+                folderId: folderId,
+                noteId: noteId,
+              ))),
       title: Text(
         title,
         overflow: TextOverflow.ellipsis,

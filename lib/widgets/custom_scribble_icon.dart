@@ -1,5 +1,4 @@
 import 'package:flutter/cupertino.dart';
-import 'package:ionicons/ionicons.dart';
 import 'package:flutter/material.dart';
 
 class CustomIconScribbleInBox extends StatelessWidget {

@@ -1,16 +1,17 @@
-# apple_notes_clone
+# Clone of the Apple Notes App
 
-A new Flutter project.
+For the people at DoorBean: [requirements.txt](requirements.txt)
 
-## Getting Started
+I am unsure about what I should include in the requirements file. On research, I found it to be explicit for python projects. However, I have included the packages from pub.dev and the sdk that is used in this project.
 
-This project is a starting point for a Flutter application.
+## Samples
 
-A few resources to get you started if this is your first Flutter project:
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+<details>
+<summary>Light Mode</summary>
+<img src="./samples/light/folder_page_popup_light.png", height= "200">  
+</details>
+<details>
+<summary>Dark Mode</summary>
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+</details>

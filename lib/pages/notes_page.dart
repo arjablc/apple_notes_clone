@@ -1,4 +1,5 @@
 import 'package:apple_notes_clone/widgets/bottom_bar.dart';
+import 'package:apple_notes_clone/widgets/edit_button.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -8,7 +9,6 @@ import 'package:apple_notes_clone/models/notes_provider.dart';
 import 'package:apple_notes_clone/pages/folders_page.dart';
 
 import '../widgets/custom_back_button.dart';
-import '../widgets/edit_button.dart';
 import '../widgets/notes_list_tile.dart';
 
 class NotesPage extends StatelessWidget {
@@ -67,29 +67,21 @@ class NotesPage extends StatelessWidget {
                   borderRadius: BorderRadius.circular(10),
                 ),
                 Consumer<NotesDataProvider>(builder: (context, value, child) {
-                  List<Notes> folderedNotesList =
-                      value.getFolderedNoets(folderId);
-                  return (folderId != "all-icloud" && folderedNotesList.isEmpty)
+                  List<Notes> folderedNotes =
+                      value.getNotesByFolderId(folderId);
+                  return folderedNotes.isEmpty
                       ? const Center(
                           child: Text("No Notes"),
                         )
                       : CupertinoListSection.insetGrouped(
-                          margin: const EdgeInsets.only(top: 15, bottom: 10),
-                          children: folderId == "all-icloud"
-                              ? List.generate(
-                                  value.notesList.length,
-                                  (index) => NotesListTiles(
-                                      title: value
-                                          .notesList[index].generateNoteTitle,
-                                      subtitle: value.notesList[index].content))
-                              : List.generate(
-                                  folderedNotesList.length,
-                                  (index) => NotesListTiles(
-                                    title: folderedNotesList[index]
-                                        .generateNoteTitle,
-                                    subtitle: folderedNotesList[index].content,
-                                  ),
-                                ),
+                          margin: const EdgeInsets.only(top: 15),
+                          children: List.generate(
+                              folderedNotes.length,
+                              (index) => NotesListTiles(
+                                  title: folderedNotes[index].generateNoteTitle,
+                                  subtitle: folderedNotes[index].content,
+                                  noteId: folderedNotes[index].id,
+                                  folderId: folderId)),
                         );
                 })
               ],

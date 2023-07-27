@@ -1,3 +1,4 @@
+import 'package:apple_notes_clone/models/folders_provider.dart';
 import 'package:flutter/cupertino.dart';
 
 class Notes {
@@ -27,7 +28,7 @@ class NotesDataProvider with ChangeNotifier {
   final List<Notes> _list = [
     Notes(
       content: "some content",
-      folderId: "quicknote",
+      folderId: "quicknotes",
     ),
     Notes(
       content: "adsfa",
@@ -45,11 +46,16 @@ class NotesDataProvider with ChangeNotifier {
     ),
   ];
   List<Notes> get notesList => [..._list];
+//This method provides the notes that have a specific folder id
+  List<Notes> getNotesByFolderId(String folderId) {
+    if (folderId == 'all-icloud') {
+      return notesList;
+    }
 
-  List<Notes> getFolderedNoets(String folderId) {
-    List<Notes> folderedNotes = [];
-    folderedNotes =
-        _list.where((element) => folderId == element.folderId).toList();
-    return folderedNotes;
+    return _list
+        .where(
+          (element) => element.folderId == folderId,
+        )
+        .toList();
   }
 }
