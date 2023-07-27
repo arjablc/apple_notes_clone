@@ -1,8 +1,15 @@
 # Clone of the Apple Notes App
+A Clone of the Notes app in the IOS ecosystem, built with flutter. 
+- DarkMode support(app darkmode will be based on system dark mode by default)
+- Create Folders 
 
-For the people at DurBean: [requirements.txt](requirements.txt)
 
+<Details>
+<Summary>For the folks at DurBean</summary>
+[requirements.txt](requirements.txt)
 I am unsure about what I should include in the requirements file. On research, I found it to be explicit for python projects. However, I have included the packages from pub.dev and the sdk that is used in this project.
+</Details>
+
 
 ## Samples
 
@@ -23,6 +30,9 @@ I am unsure about what I should include in the requirements file. On research, I
 - [X] add functionalities to the buttons(to the best of my abilities)
 - [ ] Add, remove and rename folders
 - [X] Rich Text Editor and controllers
-- [ ] Make the edit page buttons work
+- [ ] Make the edit page bottom bar buttons work
+- [ ] Timeline view of Notes
+- [ ] Filters system
 - [ ] Add, remove notes 
+- [ ] Update Existing Notes
 - [ ] Animations(attention to details)
