@@ -1,7 +1,7 @@
 # Clone of the Apple Notes App
 A Clone of the Notes app in the IOS ecosystem, built with flutter. 
 - DarkMode support(app darkmode will be based on system dark mode by default)
-- Create Folders 
+
 
 
 ### For the folks at DurBean
