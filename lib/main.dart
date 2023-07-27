@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-import 'pages/notes_page.dart';
 import 'models/notes_provider.dart';
 import 'models/folders_provider.dart';
 import 'constants/custom_theme.dart';
