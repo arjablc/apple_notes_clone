@@ -91,6 +91,9 @@ class FolderDataProvider with ChangeNotifier {
 
   //getting the folder by id
   Folder getFolderById(String folderId) {
+    if (folderId == 'quicknotes') {
+      return quickNote;
+    }
     return _list.firstWhere((element) => element.id == folderId);
   }
 }

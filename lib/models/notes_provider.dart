@@ -1,11 +1,12 @@
 import 'package:apple_notes_clone/models/folders_provider.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:intl/intl.dart';
 
 class Notes {
   final String id = UniqueKey().toString();
   final String content;
   final String folderId;
-  DateTime timeOfCreation = DateTime.now();
+  final DateTime _dateTime = DateTime.now();
 
   Notes({
     required this.content,
@@ -22,6 +23,8 @@ class Notes {
     }
     return content.substring(0, maxTitleCharacters);
   }
+
+  String get timeOfCreation => DateFormat("yyyy/mm/dd").format(_dateTime);
 }
 
 class NotesDataProvider with ChangeNotifier {

@@ -1,3 +1,4 @@
+import 'package:apple_notes_clone/models/folders_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -21,6 +22,9 @@ class EditViewPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    Folder currentFolder =
+        Provider.of<FolderDataProvider>(context, listen: false)
+            .getFolderById(folderId);
     Notes currentNote = isNewNote
         ? Notes(content: '', folderId: 'quicknotes')
         : Provider.of<NotesDataProvider>(context)
@@ -28,9 +32,11 @@ class EditViewPage extends StatelessWidget {
             .firstWhere((element) => element.id == noteId);
     return Scaffold(
       appBar: AppBar(
-        leading: CustomBackButton(
-            text: isNewNote ? "Folders" : folderId,
-            navigationFunction: navigateBack),
+        leading: Consumer<FolderDataProvider>(builder: (context, value, child) {
+          return CustomBackButton(
+              text: isNewNote ? "Folders" : currentFolder.folderName,
+              navigationFunction: navigateBack);
+        }),
         leadingWidth: double.infinity,
       ),
     );

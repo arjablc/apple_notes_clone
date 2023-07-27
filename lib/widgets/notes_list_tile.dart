@@ -1,7 +1,9 @@
+import 'package:apple_notes_clone/models/notes_provider.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import 'package:apple_notes_clone/pages/edit_and_view_page.dart';
+import 'package:provider/provider.dart';
 
 class NotesListTiles extends StatelessWidget {
   const NotesListTiles({
@@ -19,6 +21,10 @@ class NotesListTiles extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final String date = Provider.of<NotesDataProvider>(context)
+        .notesList
+        .firstWhere((element) => element.id == noteId)
+        .timeOfCreation;
     return CupertinoListTile(
       onTap: () => Navigator.of(context).push(CupertinoPageRoute(
           builder: (context) => EditViewPage(
@@ -32,9 +38,9 @@ class NotesListTiles extends StatelessWidget {
         style: Theme.of(context).textTheme.titleLarge!.copyWith(fontSize: 18),
       ),
       subtitle: Text(
-        subtitle,
+        "$date\t$subtitle",
         maxLines: 1,
-        overflow: TextOverflow.fade,
+        overflow: TextOverflow.ellipsis,
         style: Theme.of(context).textTheme.titleSmall!.copyWith(fontSize: 15),
       ),
     );
