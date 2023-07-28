@@ -19,6 +19,7 @@ class FoldersPage extends StatefulWidget {
 
 class _FoldersPageState extends State<FoldersPage> {
   bool isEditMode = false;
+
   bool hideIclouds = true;
 
   @override

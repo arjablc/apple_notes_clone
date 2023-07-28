@@ -1,12 +1,11 @@
-import 'package:apple_notes_clone/widgets/bottom_bar.dart';
-import 'package:apple_notes_clone/widgets/edit_button.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-import 'package:apple_notes_clone/models/folders_provider.dart';
-import 'package:apple_notes_clone/models/notes_provider.dart';
-
+import '../widgets/bottom_bar.dart';
+import '../widgets/edit_button.dart';
+import '../models/folders_provider.dart';
+import '../models/notes_provider.dart';
 import '../widgets/custom_back_button.dart';
 import '../widgets/notes_list_tile.dart';
 

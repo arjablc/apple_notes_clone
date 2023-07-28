@@ -25,14 +25,20 @@ class NotesListTiles extends StatelessWidget {
         .notesList
         .firstWhere((element) => element.id == noteId)
         .timeOfCreation;
+
     return CupertinoListTile(
-      onTap: () => Navigator.of(context).push(CupertinoPageRoute(
-          builder: (context) => EditViewPage(
-                isQuickNote: (folderId == 'quicknote') ? true : false,
-                isNewNote: false,
-                folderId: folderId,
-                noteId: noteId,
-              ))),
+      onTap: () {
+        Navigator.of(context).push(
+          CupertinoPageRoute(
+            builder: (context) => EditViewPage(
+              isQuickNote: (folderId == 'quicknote') ? true : false,
+              isNewNote: false,
+              folderId: folderId,
+              noteId: noteId,
+            ),
+          ),
+        );
+      },
       title: Text(
         title,
         overflow: TextOverflow.ellipsis,

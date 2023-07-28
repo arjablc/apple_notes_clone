@@ -28,13 +28,13 @@ I am unsure about what I should include in the requirements file. On research, I
 </details>
 
 ## Tasks
-- [X] Copy the UI one to one
-- [X] add functionalities to the buttons(to the best of my abilities)
+- [X] ~~Copy the UI one to one~~
 - [ ] Add, remove and rename folders
-- [X] Rich Text Editor and controllers
+- [X] ~~Rich Text Editor and controllers~~
 - [ ] Make the edit page bottom bar buttons work
 - [ ] Timeline view of Notes
 - [ ] Filters system
-- [ ] Add, remove notes 
-- [ ] Update Existing Notes
+- [X] ~~Add Notes~~
+- [ ] remove notes 
+- [X] ~~Update Existing Notes~~
 - [ ] Animations(attention to details)

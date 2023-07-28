@@ -1,4 +1,3 @@
-import 'package:apple_notes_clone/models/folders_provider.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:intl/intl.dart';
 
@@ -65,12 +64,14 @@ class NotesDataProvider with ChangeNotifier {
   //add new note
   void addNewNote(Notes newNote) {
     _list.add(newNote);
+    notifyListeners();
   }
 
   //update existing Note
   void updateExistingNote(String content, Notes oldNote) {
     int oldNoteIndex = _list.indexOf(oldNote);
     _list[oldNoteIndex].content = content;
+    notifyListeners();
   }
 
   //Note by id
