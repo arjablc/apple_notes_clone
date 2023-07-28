@@ -6,7 +6,6 @@ import 'package:provider/provider.dart';
 
 import 'package:apple_notes_clone/models/folders_provider.dart';
 import 'package:apple_notes_clone/models/notes_provider.dart';
-import 'package:apple_notes_clone/pages/folders_page.dart';
 
 import '../widgets/custom_back_button.dart';
 import '../widgets/notes_list_tile.dart';
@@ -20,9 +19,7 @@ class NotesPage extends StatelessWidget {
   final String folderId;
 
   void navigateBack(BuildContext context) {
-    Navigator.of(context).pushAndRemoveUntil(
-        CupertinoPageRoute(builder: (context) => const FoldersPage()),
-        ModalRoute.withName(FoldersPage.routeName));
+    Navigator.of(context).pop();
   }
 
   @override

@@ -96,4 +96,11 @@ class FolderDataProvider with ChangeNotifier {
     }
     return _list.firstWhere((element) => element.id == folderId);
   }
+
+  String getFolderNameById(String folderId) {
+    if (folderId == 'quicknotes') {
+      return quickNote.folderName;
+    }
+    return _list.firstWhere((element) => element.id == folderId).folderName;
+  }
 }

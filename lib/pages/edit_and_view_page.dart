@@ -4,7 +4,6 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_quill/flutter_quill.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:ionicons/ionicons.dart';
 import 'package:provider/provider.dart';
 
 import 'package:apple_notes_clone/models/folders_provider.dart';
@@ -29,12 +28,10 @@ class EditViewPage extends StatefulWidget {
 }
 
 class _EditViewPageState extends State<EditViewPage> {
-  void navigateBack(BuildContext context) {
-    Navigator.of(context).pop();
-  }
-
+  //variables
   Notes? currentNote;
   Document _document = Document();
+
   @override
   void initState() {
     currentNote = (widget.isNewNote)
@@ -42,17 +39,31 @@ class _EditViewPageState extends State<EditViewPage> {
         : Provider.of<NotesDataProvider>(context, listen: false)
             .getNoteById(widget.noteId);
     putOldValueInEditor();
+
     super.initState();
   }
 
   void putOldValueInEditor() {
     _document = Document()..insert(0, currentNote!.content);
-    setState(() {
-      _controller = QuillController(
-        document: _document,
-        selection: const TextSelection.collapsed(offset: 0),
-      );
-    });
+    setState(
+      () {
+        _controller = QuillController(
+          document: _document,
+          selection: const TextSelection.collapsed(offset: 0),
+        );
+      },
+    );
+  }
+
+  String getFolderName() {
+    return Provider.of<FolderDataProvider>(context)
+        .getFolderNameById(widget.folderId);
+  }
+
+  //methods
+  //for going back
+  void navigateBack(BuildContext context) {
+    Navigator.of(context).pop();
   }
 
 //controllers
@@ -62,16 +73,13 @@ class _EditViewPageState extends State<EditViewPage> {
 
   @override
   Widget build(BuildContext context) {
-    Folder currentFolder =
-        Provider.of<FolderDataProvider>(context, listen: false)
-            .getFolderById(widget.folderId);
     final bool isDarkMode =
         MediaQuery.of(context).platformBrightness == Brightness.dark;
     return Scaffold(
       appBar: AppBar(
         leading: Consumer<FolderDataProvider>(builder: (context, value, child) {
           return CustomBackButton(
-              text: widget.isQuickNote ? "Folders" : currentFolder.folderName,
+              text: widget.isQuickNote ? "Folders" : getFolderName(),
               navigationFunction: navigateBack);
         }),
         leadingWidth: double.infinity,
