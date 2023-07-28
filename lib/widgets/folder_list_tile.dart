@@ -44,7 +44,7 @@ class FoldersListTile extends StatelessWidget {
                       )),
                   GestureDetector(
                     //TODO Implement the drag to rearrange behavior
-                    onVerticalDragUpdate: ((details) => null),
+                    // onVerticalDragUpdate: ((details) => null),
                     child: const Icon(
                       CupertinoIcons.line_horizontal_3,
                       color: CupertinoColors.lightBackgroundGray,

@@ -59,7 +59,7 @@ class _EditViewPageState extends State<EditViewPage> {
   }
 
   //for going back
-  void navigateBack(BuildContext context) {
+  void navigateBack(BuildContext context) async {
     changeNotes(context, currentNote!, _controller.document.toPlainText());
     Navigator.pop(context);
   }

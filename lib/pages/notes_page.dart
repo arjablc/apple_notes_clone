@@ -75,7 +75,8 @@ class NotesPage extends StatelessWidget {
                               folderedNotes.length,
                               (index) => NotesListTiles(
                                   title: folderedNotes[index].generateNoteTitle,
-                                  subtitle: folderedNotes[index].content,
+                                  subtitle:
+                                      folderedNotes[index].generateSubtitle,
                                   noteId: folderedNotes[index].id,
                                   folderId: folderId)),
                         );

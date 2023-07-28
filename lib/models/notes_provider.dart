@@ -16,13 +16,23 @@ class Notes {
 //rather it is first parts of the note
 //we are going to generate the title ourselves
   String get generateNoteTitle {
-    int maxTitleCharacters = 100;
-    if (content.length < 100) {
+    if (content.length < 50) {
       return content;
     }
-    return content.substring(0, maxTitleCharacters);
+    return '${content.substring(0, 50)}...';
   }
 
+// This generates the subtitle of the note
+  String get generateSubtitle {
+    if (content.length < 50) {
+      return 'No additional text';
+    }
+    String unFormatedSubtitle = content.substring(50, content.length - 1);
+    List<String> subtitleWords = unFormatedSubtitle.split(' ');
+    return subtitleWords.sublist(1, subtitleWords.length).join(' ').toString();
+  }
+
+//getter for formated date and time of creation of note
   String get timeOfCreation => DateFormat("yyyy/mm/dd").format(_dateTime);
 }
 
