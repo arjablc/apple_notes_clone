@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:flutter/cupertino.dart';
 import 'package:intl/intl.dart';
 
@@ -23,13 +25,25 @@ class Notes {
   }
 
 // This generates the subtitle of the note
+// This generates the subtitle of the note
+//what I want ?
+//To be able to shwo No additional text is the content is smaller than 50
+//But the problem is that the new line is taking
+
   String get generateSubtitle {
     if (content.length < 50) {
       return 'No additional text';
     }
-    String unFormatedSubtitle = content.substring(50, content.length - 1);
-    List<String> subtitleWords = unFormatedSubtitle.split(' ');
-    return subtitleWords.sublist(1, subtitleWords.length).join(' ').toString();
+
+    String unFormatedSubtitle =
+        content.substring(50, min(content.length - 1, 75));
+    List<String> subtitleWordsList =
+        unFormatedSubtitle.replaceAll("\n", " ").split(' ');
+    List<String> subListFromSecondWord =
+        subtitleWordsList.sublist(2, subtitleWordsList.length);
+    String subtitleText = subListFromSecondWord.join(' ').trim();
+    debugPrint(subtitleText);
+    return unFormatedSubtitle;
   }
 
 //getter for formated date and time of creation of note
