@@ -38,3 +38,7 @@ I am unsure about what I should include in the requirements file. On research, I
 - [ ] remove notes 
 - [X] ~~Update Existing Notes~~
 - [ ] Animations(attention to details)
+
+
+# Current Task
+- Making the notes slidable with flutter_slidable package.
